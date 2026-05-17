@@ -323,24 +323,9 @@ sudo sysctl net.ipv4.tcp_congestion_control=bbr
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Clash 的节点健康检测如何工作？</h5></div>
+    <div class="panel-heading"><h5>Potatso Lite 手动节点切换有哪些优点？</h5></div>
     <div class="panel-body">
-        Clash 会定期对每个节点进行延迟和丢包率测试，并根据结果标记节点健康状态。结合策略组，可以自动切换到最优节点，避免访问高延迟或失效节点，提高整体网络稳定性和效率。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>SSR 的混淆方式选择有什么讲究？</h5></div>
-    <div class="panel-body">
-        混淆方式决定流量伪装特性，不同方式适应不同封锁环境。常用方式如 tls1.2_ticket_auth 模拟 HTTPS，http_simple 模拟 HTTP 请求，根据环境选择可提高抗封锁能力。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Shadowrocket 在使用订阅时要注意什么？</h5></div>
-    <div class="panel-body">
-        在 Shadowrocket 中添加订阅时，应确保链接以 https 开头且格式正确。此外，若节点更新失败，可尝试关闭缓存或重新获取订阅链接，以保证配置文件同步最新节点数据。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>V2Ray 策略组如何根据节点延迟自动选择？</h5></div>
-    <div class="panel-body">
-        策略组会根据节点延迟和丢包率自动选择最优节点。结合路由规则可保证国内流量直连，海外流量走最佳节点，提高访问速度和连接稳定性，优化整体网络体验。<hr />    </div>
+        手动切换节点可以根据延迟和用途选择最佳节点，适合在节点不稳定或特殊需求下使用。虽然不支持自动订阅更新，但足够满足轻量用户对节点管理和分流的需求。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>V2Ray 的 WebSocket + TLS 配置有哪些优势？</h5></div>
@@ -348,14 +333,9 @@ sudo sysctl net.ipv4.tcp_congestion_control=bbr
         WebSocket + TLS 可以伪装成普通 HTTPS 流量，增强抗封锁能力。适合高封锁环境，结合域名伪装和策略组，可实现高安全性和稳定的网络访问体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>为什么使用 CDN 后仍然能被封？如何规避？</h5></div>
+    <div class="panel-heading"><h5>Clash 的节点健康检测如何工作？</h5></div>
     <div class="panel-body">
-        若 CDN 回源 IP 或配置不当可能泄露真实服务器信息，或者 CDN 本身被目标防火墙识别。应启用完整的反向代理配置、隐藏源站 IP 与禁用不必要的服务，必要时使用多级中转或更换 CDN 供应商。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Potatso Lite 手动节点切换有哪些优点？</h5></div>
-    <div class="panel-body">
-        手动切换节点可以根据延迟和用途选择最佳节点，适合在节点不稳定或特殊需求下使用。虽然不支持自动订阅更新，但足够满足轻量用户对节点管理和分流的需求。<hr />    </div>
+        Clash 会定期对每个节点进行延迟和丢包率测试，并根据结果标记节点健康状态。结合策略组，可以自动切换到最优节点，避免访问高延迟或失效节点，提高整体网络稳定性和效率。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>WinXray 的本地 PAC 模式与全局模式有什么区别？</h5></div>
@@ -363,9 +343,29 @@ sudo sysctl net.ipv4.tcp_congestion_control=bbr
         PAC 模式通过规则文件自动判定哪些域名走代理，能兼顾速度与便利；全局模式则所有流量都通过代理，适合调试或访问被完全屏蔽的网络。两者可在界面一键切换，根据需求灵活选择。<hr />    </div>
 </div>
 <div class="panel panel-default">
+    <div class="panel-heading"><h5>为什么使用 CDN 后仍然能被封？如何规避？</h5></div>
+    <div class="panel-body">
+        若 CDN 回源 IP 或配置不当可能泄露真实服务器信息，或者 CDN 本身被目标防火墙识别。应启用完整的反向代理配置、隐藏源站 IP 与禁用不必要的服务，必要时使用多级中转或更换 CDN 供应商。<hr />    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading"><h5>Clash 的 ACL4SSR 规则与 Rule Provider 有何区别？</h5></div>
     <div class="panel-body">
         ACL4SSR 是第三方规则集合，专注于分流国内外网站。Rule Provider 是 Clash 的订阅机制，允许自动更新远程规则。二者可以结合使用，实现灵活分流管理。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>SSR 的混淆方式选择有什么讲究？</h5></div>
+    <div class="panel-body">
+        混淆方式决定流量伪装特性，不同方式适应不同封锁环境。常用方式如 tls1.2_ticket_auth 模拟 HTTPS，http_simple 模拟 HTTP 请求，根据环境选择可提高抗封锁能力。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>V2Ray 策略组如何根据节点延迟自动选择？</h5></div>
+    <div class="panel-body">
+        策略组会根据节点延迟和丢包率自动选择最优节点。结合路由规则可保证国内流量直连，海外流量走最佳节点，提高访问速度和连接稳定性，优化整体网络体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Shadowrocket 在使用订阅时要注意什么？</h5></div>
+    <div class="panel-body">
+        在 Shadowrocket 中添加订阅时，应确保链接以 https 开头且格式正确。此外，若节点更新失败，可尝试关闭缓存或重新获取订阅链接，以保证配置文件同步最新节点数据。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Potatso Lite 是否支持多节点手动管理？</h5></div>
@@ -399,16 +399,16 @@ sudo sysctl net.ipv4.tcp_congestion_control=bbr
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2026-4-22-free-high-speed-nodes.htm" title="Clash吧节点 | 4月22日22.3M/S|免费Shadowrocket节点/Singbox节点/SSR节点/V2ray节点/Clash节点/Trojan节点机场推荐，在线Clash机场梯子购买推荐">Clash吧节点 | 4月22日22.3M/S|免费Shadowrocket节点/Singbox节点/SSR节点/V2ray节点/Clash节点/Trojan节点机场推荐，在线Clash机场梯子购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-23-node-share-links.htm" title="Clash吧节点 | 4月23日22.7M/S|免费V2ray节点/Singbox节点/Clash节点/SSR节点/Trojan节点/Shadowrocket节点机场推荐，在线Clash机场梯子购买推荐">Clash吧节点 | 4月23日22.7M/S|免费V2ray节点/Singbox节点/Clash节点/SSR节点/Trojan节点/Shadowrocket节点机场推荐，在线Clash机场梯子购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-9-free-ssr-node.htm" title="Clash吧节点 | 4月9日20.4M/S|免费V2ray节点/Trojan节点/SSR节点/Clash节点/Shadowrocket节点/Singbox节点机场推荐，在线Clash机场梯子购买推荐">Clash吧节点 | 4月9日20.4M/S|免费V2ray节点/Trojan节点/SSR节点/Clash节点/Shadowrocket节点/Singbox节点机场推荐，在线Clash机场梯子购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-5-2-free-clash.htm" title="Clash吧节点 | 5月2日18.9M/S|免费Trojan节点/Shadowrocket节点/V2ray节点/Singbox节点/SSR节点/Clash节点机场推荐，在线Clash机场梯子购买推荐">Clash吧节点 | 5月2日18.9M/S|免费Trojan节点/Shadowrocket节点/V2ray节点/Singbox节点/SSR节点/Clash节点机场推荐，在线Clash机场梯子购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-5-1-free-node-subscribe-links.htm" title="Clash吧节点 | 5月1日19.2M/S|免费Clash节点/Singbox节点/Shadowrocket节点/SSR节点/Trojan节点/V2ray节点机场推荐，在线Clash机场梯子购买推荐">Clash吧节点 | 5月1日19.2M/S|免费Clash节点/Singbox节点/Shadowrocket节点/SSR节点/Trojan节点/V2ray节点机场推荐，在线Clash机场梯子购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-20-node-share-links.htm" title="Clash吧节点 | 4月20日21.1M/S|免费SSR节点/Shadowrocket节点/V2ray节点/Clash节点/Singbox节点/Trojan节点机场推荐，在线Clash机场梯子购买推荐">Clash吧节点 | 4月20日21.1M/S|免费SSR节点/Shadowrocket节点/V2ray节点/Clash节点/Singbox节点/Trojan节点机场推荐，在线Clash机场梯子购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-17-free-node-subscribe.htm" title="Clash吧节点 | 4月17日19.3M/S|免费Trojan节点/V2ray节点/Singbox节点/SSR节点/Shadowrocket节点/Clash节点机场推荐，在线Clash机场梯子购买推荐">Clash吧节点 | 4月17日19.3M/S|免费Trojan节点/V2ray节点/Singbox节点/SSR节点/Shadowrocket节点/Clash节点机场推荐，在线Clash机场梯子购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-6-free-node-subscribe.htm" title="Clash吧节点 | 5月6日21.6M/S|免费SSR节点/Shadowrocket节点/V2ray节点/Trojan节点/Singbox节点/Clash节点机场推荐，在线Clash机场梯子购买推荐">Clash吧节点 | 5月6日21.6M/S|免费SSR节点/Shadowrocket节点/V2ray节点/Trojan节点/Singbox节点/Clash节点机场推荐，在线Clash机场梯子购买推荐</a></li>
                         <li class="py-2"><a href="/free-nodes/2026-4-14-free-v2ray.htm" title="Clash吧节点 | 4月14日20.3M/S|免费Trojan节点/SSR节点/Singbox节点/V2ray节点/Clash节点/Shadowrocket节点机场推荐，在线Clash机场梯子购买推荐">Clash吧节点 | 4月14日20.3M/S|免费Trojan节点/SSR节点/Singbox节点/V2ray节点/Clash节点/Shadowrocket节点机场推荐，在线Clash机场梯子购买推荐</a></li>
                         <li class="py-2"><a href="/free-nodes/2026-4-28-clash-v2ray-ss-ssr.htm" title="Clash吧节点 | 4月28日19.2M/S|免费V2ray节点/Clash节点/Trojan节点/Shadowrocket节点/SSR节点/Singbox节点机场推荐，在线Clash机场梯子购买推荐">Clash吧节点 | 4月28日19.2M/S|免费V2ray节点/Clash节点/Trojan节点/Shadowrocket节点/SSR节点/Singbox节点机场推荐，在线Clash机场梯子购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-30-free-ssr-subscribe.htm" title="Clash吧节点 | 4月30日22.4M/S|免费SSR节点/Singbox节点/Shadowrocket节点/Clash节点/V2ray节点/Trojan节点机场推荐，在线Clash机场梯子购买推荐">Clash吧节点 | 4月30日22.4M/S|免费SSR节点/Singbox节点/Shadowrocket节点/Clash节点/V2ray节点/Trojan节点机场推荐，在线Clash机场梯子购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-24-clash-v2ray-ss-ssr.htm" title="Clash吧节点 | 4月24日21M/S|免费Singbox节点/Clash节点/SSR节点/V2ray节点/Shadowrocket节点/Trojan节点机场推荐，在线Clash机场梯子购买推荐">Clash吧节点 | 4月24日21M/S|免费Singbox节点/Clash节点/SSR节点/V2ray节点/Shadowrocket节点/Trojan节点机场推荐，在线Clash机场梯子购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-19-node-share-links.htm" title="Clash吧节点 | 4月19日21.3M/S|免费Trojan节点/Shadowrocket节点/Clash节点/Singbox节点/SSR节点/V2ray节点机场推荐，在线Clash机场梯子购买推荐">Clash吧节点 | 4月19日21.3M/S|免费Trojan节点/Shadowrocket节点/Clash节点/Singbox节点/SSR节点/V2ray节点机场推荐，在线Clash机场梯子购买推荐</a></li>
                         <li class="py-2"><a href="/free-nodes/2026-4-18-free-ssr-subscribe.htm" title="Clash吧节点 | 4月18日19.3M/S|免费Singbox节点/Trojan节点/Shadowrocket节点/V2ray节点/SSR节点/Clash节点机场推荐，在线Clash机场梯子购买推荐">Clash吧节点 | 4月18日19.3M/S|免费Singbox节点/Trojan节点/Shadowrocket节点/V2ray节点/SSR节点/Clash节点机场推荐，在线Clash机场梯子购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-29-free-clash-subscribe.htm" title="Clash吧节点 | 4月29日22.3M/S|免费Singbox节点/V2ray节点/SSR节点/Trojan节点/Clash节点/Shadowrocket节点机场推荐，在线Clash机场梯子购买推荐">Clash吧节点 | 4月29日22.3M/S|免费Singbox节点/V2ray节点/SSR节点/Trojan节点/Clash节点/Shadowrocket节点机场推荐，在线Clash机场梯子购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-7-node-share.htm" title="Clash吧节点 | 5月7日18M/S|免费Trojan节点/Singbox节点/Clash节点/SSR节点/Shadowrocket节点/V2ray节点机场推荐，在线Clash机场梯子购买推荐">Clash吧节点 | 5月7日18M/S|免费Trojan节点/Singbox节点/Clash节点/SSR节点/Shadowrocket节点/V2ray节点机场推荐，在线Clash机场梯子购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-10-free-node-subscribe.htm" title="Clash吧节点 | 5月10日18.9M/S|免费Shadowrocket节点/V2ray节点/Singbox节点/Trojan节点/Clash节点/SSR节点机场推荐，在线Clash机场梯子购买推荐">Clash吧节点 | 5月10日18.9M/S|免费Shadowrocket节点/V2ray节点/Singbox节点/Trojan节点/Clash节点/SSR节点机场推荐，在线Clash机场梯子购买推荐</a></li>
                     </ul>
     </div>
 </div>
@@ -420,10 +420,10 @@ sudo sysctl net.ipv4.tcp_congestion_control=bbr
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">3</span> <a href="/date/2026-05/" title="2026-05 归档">2026-05</a></h4>
+                <h4><span class="badge" style="float: right;">11</span> <a href="/date/2026-05/" title="2026-05 归档">2026-05</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">22</span> <a href="/date/2026-04/" title="2026-04 归档">2026-04</a></h4>
+                <h4><span class="badge" style="float: right;">19</span> <a href="/date/2026-04/" title="2026-04 归档">2026-04</a></h4>
             </li>
                     </ul>
     </div>
