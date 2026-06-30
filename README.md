@@ -1,4 +1,4 @@
-# Clash吧节点 | 6月23日20.8M/S|免费Singbox节点/V2ray节点/SSR节点/Shadowrocket节点/Clash节点机场推荐，在线Clash机场梯子购买推荐  更新时间 2026-06-23 09:00:42
+# Clash吧节点 | 6月30日21.3M/S|免费SSR节点/Shadowrocket节点/V2ray节点/Clash节点/Singbox节点机场推荐，在线Clash机场梯子购买推荐  更新时间 2026-06-30 08:23:34
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://clashbar.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
@@ -9,23 +9,23 @@
 
 ### 免费Clash节点订阅链接
 
-- https://clashbar.github.io/uploads/2026/06/0-20260623.yaml
-- https://clashbar.github.io/uploads/2026/06/1-20260623.yaml
-- https://clashbar.github.io/uploads/2026/06/2-20260623.yaml
-- https://clashbar.github.io/uploads/2026/06/3-20260623.yaml
-- https://clashbar.github.io/uploads/2026/06/4-20260623.yaml
+- https://clashbar.github.io/uploads/2026/06/0-20260630.yaml
+- https://clashbar.github.io/uploads/2026/06/1-20260630.yaml
+- https://clashbar.github.io/uploads/2026/06/2-20260630.yaml
+- https://clashbar.github.io/uploads/2026/06/3-20260630.yaml
+- https://clashbar.github.io/uploads/2026/06/4-20260630.yaml
 
 ### 免费V2ray节点订阅链接
 
-- https://clashbar.github.io/uploads/2026/06/0-20260623.txt
-- https://clashbar.github.io/uploads/2026/06/1-20260623.txt
-- https://clashbar.github.io/uploads/2026/06/2-20260623.txt
-- https://clashbar.github.io/uploads/2026/06/3-20260623.txt
-- https://clashbar.github.io/uploads/2026/06/4-20260623.txt
+- https://clashbar.github.io/uploads/2026/06/0-20260630.txt
+- https://clashbar.github.io/uploads/2026/06/1-20260630.txt
+- https://clashbar.github.io/uploads/2026/06/2-20260630.txt
+- https://clashbar.github.io/uploads/2026/06/3-20260630.txt
+- https://clashbar.github.io/uploads/2026/06/4-20260630.txt
 
 ### 免费Sing-box节点订阅链接
 
-- https://clashbar.github.io/uploads/2026/06/20260623.json
+- https://clashbar.github.io/uploads/2026/06/20260630.json
 
 ## 更多Clash节点订阅 ：
 
