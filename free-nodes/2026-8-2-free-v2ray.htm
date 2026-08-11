@@ -341,14 +341,9 @@ A4：部分版本如 Clash Verge 支持智能模式切换，也可借助计划�
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>V2Ray 的 TCP + TLS 模式适合什么场景？</h5></div>
+    <div class="panel-heading"><h5>如何配置 Sing-box 使用 DoH 加密 DNS？</h5></div>
     <div class="panel-body">
-        TCP + TLS 模式可模拟 HTTPS 流量，增强抗封锁能力。适合网络封锁严格的环境，通过策略组选择最佳节点，可保证访问速度和连接稳定性，尤其适用于网页浏览和视频播放。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>WinXray 是否支持 VMess + TLS + WS 模式？</h5></div>
-    <div class="panel-body">
-        是的，WinXray 支持该组合。用户需填写正确的 host、path、端口及证书验证方式。若节点来自订阅源，将自动识别相应参数；否则需手动输入与服务端一致的配置项。<hr />    </div>
+        在 dns 模块中添加类型为 doh 的上游，如 `https://1.1.1.1/dns-query`，并指定 bootstrap 地址。启用加密 DNS 可防止 DNS 泄露并加快国际解析速度，提高整体隐私保护。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Shadowrocket 节点延迟排序如何提升访问体验？</h5></div>
@@ -361,9 +356,9 @@ A4：部分版本如 Clash Verge 支持智能模式切换，也可借助计划�
         Mellow 可在配置文件中定义多个 outbound，并结合 routing 规则实现按域名、IP 或策略组分流。这样不同类型的流量可走不同节点，提高使用体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>SSR 节点和 V2Ray 节点可以混合使用吗？</h5></div>
+    <div class="panel-heading"><h5>WinXray 可以自定义规则吗？</h5></div>
     <div class="panel-body">
-        可以，但要使用支持多协议的客户端，如 Clash、Sing-box、Mihomo 等。这类客户端能在同一配置文件中加载不同协议的节点，通过规则分流让 SSR 与 V2Ray 同时工作。<hr />    </div>
+        可以。WinXray 支持编辑路由规则文件，用户可设置域名白名单或黑名单，实现分流策略。例如国内流量直连、国外流量走代理，从而提高网络访问效率。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Sing-box 的域名规则如何实现分流？</h5></div>
@@ -371,9 +366,14 @@ A4：部分版本如 Clash Verge 支持智能模式切换，也可借助计划�
         Sing-box 支持按域名匹配流量，将不同网站或应用流量分配到指定节点。结合策略组自动切换低延迟节点，可优化访问速度，保证网络稳定性并提高整体体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>WinXray 可以自定义规则吗？</h5></div>
+    <div class="panel-heading"><h5>Hiddify Next 如何设置用户带宽与流量配额？</h5></div>
     <div class="panel-body">
-        可以。WinXray 支持编辑路由规则文件，用户可设置域名白名单或黑名单，实现分流策略。例如国内流量直连、国外流量走代理，从而提高网络访问效率。<hr />    </div>
+        管理员可为每个用户单独设置带宽和流量上限。超出限制时，可自动降速或阻止访问，确保服务器资源合理分配，避免单用户占用过多带宽，提高整体网络公平性和效率。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>WinXray 是否支持 VMess + TLS + WS 模式？</h5></div>
+    <div class="panel-body">
+        是的，WinXray 支持该组合。用户需填写正确的 host、path、端口及证书验证方式。若节点来自订阅源，将自动识别相应参数；否则需手动输入与服务端一致的配置项。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Netch 如何结合策略组实现多节点优化？</h5></div>
@@ -381,14 +381,14 @@ A4：部分版本如 Clash Verge 支持智能模式切换，也可借助计划�
         Netch 可按应用和协议设置策略组，将流量分配到最优节点。结合节点延迟检测和自动切换功能，可提高网页浏览、视频播放和游戏访问速度及稳定性。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Hiddify Next 如何设置用户带宽与流量配额？</h5></div>
+    <div class="panel-heading"><h5>V2Ray 的 TCP + TLS 模式适合什么场景？</h5></div>
     <div class="panel-body">
-        管理员可为每个用户单独设置带宽和流量上限。超出限制时，可自动降速或阻止访问，确保服务器资源合理分配，避免单用户占用过多带宽，提高整体网络公平性和效率。<hr />    </div>
+        TCP + TLS 模式可模拟 HTTPS 流量，增强抗封锁能力。适合网络封锁严格的环境，通过策略组选择最佳节点，可保证访问速度和连接稳定性，尤其适用于网页浏览和视频播放。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>如何配置 Sing-box 使用 DoH 加密 DNS？</h5></div>
+    <div class="panel-heading"><h5>SSR 节点和 V2Ray 节点可以混合使用吗？</h5></div>
     <div class="panel-body">
-        在 dns 模块中添加类型为 doh 的上游，如 `https://1.1.1.1/dns-query`，并指定 bootstrap 地址。启用加密 DNS 可防止 DNS 泄露并加快国际解析速度，提高整体隐私保护。    </div>
+        可以，但要使用支持多协议的客户端，如 Clash、Sing-box、Mihomo 等。这类客户端能在同一配置文件中加载不同协议的节点，通过规则分流让 SSR 与 V2Ray 同时工作。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -436,16 +436,16 @@ A4：部分版本如 Clash Verge 支持智能模式切换，也可借助计划�
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2026-7-15-shadowrocket-node.htm" title="Clash吧节点 | 7月15日20.1M/S|免费Singbox节点/Shadowrocket节点/Trojan节点/V2ray节点/SSR节点/Clash节点机场推荐，在线Clash机场梯子购买推荐">Clash吧节点 | 7月15日20.1M/S|免费Singbox节点/Shadowrocket节点/Trojan节点/V2ray节点/SSR节点/Clash节点机场推荐，在线Clash机场梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-7-22-clash-v2ray-ss-ssr.htm" title="Clash吧节点 | 7月22日19.6M/S|免费Singbox节点/Clash节点/V2ray节点/Trojan节点/SSR节点/Shadowrocket节点机场推荐，在线Clash机场梯子购买推荐">Clash吧节点 | 7月22日19.6M/S|免费Singbox节点/Clash节点/V2ray节点/Trojan节点/SSR节点/Shadowrocket节点机场推荐，在线Clash机场梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-10-clash-node-daily-updates.htm" title="Clash吧节点 | 8月10日21.7M/S|免费V2ray节点/Shadowrocket节点/SSR节点/Singbox节点/Clash节点/Trojan节点机场推荐，在线Clash机场梯子购买推荐">Clash吧节点 | 8月10日21.7M/S|免费V2ray节点/Shadowrocket节点/SSR节点/Singbox节点/Clash节点/Trojan节点机场推荐，在线Clash机场梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-7-12-free-ssr-subscribe.htm" title="Clash吧节点 | 7月12日22.7M/S|免费Shadowrocket节点/V2ray节点/SSR节点/Singbox节点/Clash节点/Trojan节点机场推荐，在线Clash机场梯子购买推荐">Clash吧节点 | 7月12日22.7M/S|免费Shadowrocket节点/V2ray节点/SSR节点/Singbox节点/Clash节点/Trojan节点机场推荐，在线Clash机场梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-6-8-free-shadowrocket-node.htm" title="Clash吧节点 | 6月8日20.1M/S|免费Shadowrocket节点/Singbox节点/SSR节点/Clash节点/Trojan节点/V2ray节点机场推荐，在线Clash机场梯子购买推荐">Clash吧节点 | 6月8日20.1M/S|免费Shadowrocket节点/Singbox节点/SSR节点/Clash节点/Trojan节点/V2ray节点机场推荐，在线Clash机场梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-6-13-clash-windows.htm" title="Clash吧节点 | 6月13日18.4M/S|免费V2ray节点/Singbox节点/Clash节点/Shadowrocket节点/Trojan节点/SSR节点机场推荐，在线Clash机场梯子购买推荐">Clash吧节点 | 6月13日18.4M/S|免费V2ray节点/Singbox节点/Clash节点/Shadowrocket节点/Trojan节点/SSR节点机场推荐，在线Clash机场梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-7-3-free-ssr-node.htm" title="Clash吧节点 | 7月3日22.5M/S|免费Singbox节点/V2ray节点/SSR节点/Shadowrocket节点/Trojan节点/Clash节点机场推荐，在线Clash机场梯子购买推荐">Clash吧节点 | 7月3日22.5M/S|免费Singbox节点/V2ray节点/SSR节点/Shadowrocket节点/Trojan节点/Clash节点机场推荐，在线Clash机场梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-8-node-share.htm" title="Clash吧节点 | 8月8日19.5M/S|免费SSR节点/V2ray节点/Singbox节点/Clash节点/Trojan节点/Shadowrocket节点机场推荐，在线Clash机场梯子购买推荐">Clash吧节点 | 8月8日19.5M/S|免费SSR节点/V2ray节点/Singbox节点/Clash节点/Trojan节点/Shadowrocket节点机场推荐，在线Clash机场梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-6-30-node-share.htm" title="Clash吧节点 | 6月30日20.7M/S|免费Shadowrocket节点/Clash节点/Singbox节点/V2ray节点/SSR节点/Trojan节点机场推荐，在线Clash机场梯子购买推荐">Clash吧节点 | 6月30日20.7M/S|免费Shadowrocket节点/Clash节点/Singbox节点/V2ray节点/SSR节点/Trojan节点机场推荐，在线Clash机场梯子购买推荐</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/free-subscribe-node-2026-7-29.htm" title="Clash吧节点 | 7月29日22.7M/S|免费Shadowrocket节点/SSR节点/Trojan节点/Singbox节点/Clash节点/V2ray节点机场推荐，在线Clash机场梯子购买推荐">Clash吧节点 | 7月29日22.7M/S|免费Shadowrocket节点/SSR节点/Trojan节点/Singbox节点/Clash节点/V2ray节点机场推荐，在线Clash机场梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-14-free-clash.htm" title="Clash吧节点 | 7月14日18.4M/S|免费V2ray节点/Trojan节点/SSR节点/Singbox节点/Clash节点/Shadowrocket节点机场推荐，在线Clash机场梯子购买推荐">Clash吧节点 | 7月14日18.4M/S|免费V2ray节点/Trojan节点/SSR节点/Singbox节点/Clash节点/Shadowrocket节点机场推荐，在线Clash机场梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-10-free-clash.htm" title="Clash吧节点 | 7月10日19M/S|免费Singbox节点/V2ray节点/SSR节点/Trojan节点/Clash节点/Shadowrocket节点机场推荐，在线Clash机场梯子购买推荐">Clash吧节点 | 7月10日19M/S|免费Singbox节点/V2ray节点/SSR节点/Trojan节点/Clash节点/Shadowrocket节点机场推荐，在线Clash机场梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-6-clash-node.htm" title="Clash吧节点 | 7月6日20.4M/S|免费Singbox节点/V2ray节点/Clash节点/Trojan节点/SSR节点/Shadowrocket节点机场推荐，在线Clash机场梯子购买推荐">Clash吧节点 | 7月6日20.4M/S|免费Singbox节点/V2ray节点/Clash节点/Trojan节点/SSR节点/Shadowrocket节点机场推荐，在线Clash机场梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-6-12-clash-node.htm" title="Clash吧节点 | 6月12日21.1M/S|免费Singbox节点/Shadowrocket节点/V2ray节点/SSR节点/Trojan节点/Clash节点机场推荐，在线Clash机场梯子购买推荐">Clash吧节点 | 6月12日21.1M/S|免费Singbox节点/Shadowrocket节点/V2ray节点/SSR节点/Trojan节点/Clash节点机场推荐，在线Clash机场梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-13-free-v2ray-subscribe.htm" title="Clash吧节点 | 7月13日18.2M/S|免费Singbox节点/Trojan节点/SSR节点/Clash节点/Shadowrocket节点/V2ray节点机场推荐，在线Clash机场梯子购买推荐">Clash吧节点 | 7月13日18.2M/S|免费Singbox节点/Trojan节点/SSR节点/Clash节点/Shadowrocket节点/V2ray节点机场推荐，在线Clash机场梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-1-free-node-subscribe-links.htm" title="Clash吧节点 | 7月1日22.1M/S|免费Singbox节点/Shadowrocket节点/Clash节点/SSR节点/Trojan节点/V2ray节点机场推荐，在线Clash机场梯子购买推荐">Clash吧节点 | 7月1日22.1M/S|免费Singbox节点/Shadowrocket节点/Clash节点/SSR节点/Trojan节点/V2ray节点机场推荐，在线Clash机场梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-6-11-shadowrocket-node.htm" title="Clash吧节点 | 6月11日20.2M/S|免费Shadowrocket节点/Clash节点/Trojan节点/V2ray节点/SSR节点/Singbox节点机场推荐，在线Clash机场梯子购买推荐">Clash吧节点 | 6月11日20.2M/S|免费Shadowrocket节点/Clash节点/Trojan节点/V2ray节点/SSR节点/Singbox节点机场推荐，在线Clash机场梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-17-clash-windows.htm" title="Clash吧节点 | 7月17日22.1M/S|免费Shadowrocket节点/Clash节点/Trojan节点/Singbox节点/V2ray节点/SSR节点机场推荐，在线Clash机场梯子购买推荐">Clash吧节点 | 7月17日22.1M/S|免费Shadowrocket节点/Clash节点/Trojan节点/Singbox节点/V2ray节点/SSR节点机场推荐，在线Clash机场梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-8-2-free-v2ray.htm" title="Clash吧节点 | 8月2日22.1M/S|免费Shadowrocket节点/Clash节点/Singbox节点/Trojan节点/SSR节点/V2ray节点机场推荐，在线Clash机场梯子购买推荐">Clash吧节点 | 8月2日22.1M/S|免费Shadowrocket节点/Clash节点/Singbox节点/Trojan节点/SSR节点/V2ray节点机场推荐，在线Clash机场梯子购买推荐</a><hr /></li>
                     </ul>
     </div>
 </div>
@@ -457,7 +457,7 @@ A4：部分版本如 Clash Verge 支持智能模式切换，也可借助计划�
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">4</span> <a href="/date/2026-08/" title="2026-08 归档">2026-08</a></h4>
+                <h4><span class="badge" style="float: right;">11</span> <a href="/date/2026-08/" title="2026-08 归档">2026-08</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">31</span> <a href="/date/2026-07/" title="2026-07 归档">2026-07</a></h4>
